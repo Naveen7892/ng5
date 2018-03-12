@@ -51,3 +51,20 @@ TEMPLATING AND STYLING
 - add component specific css rules to app/home/home.component.scss
 
 -------------------------------------------------------------------
+INTERPOLATION, PROPERTY & EVENT BINDING
+
+property binding
+[value]="btnText"
+
+Interpolation
+value="{{btnText}}"
+
+Event binding
+[(ngModel)]="goalText"
+
+For loop in template
+<p *ngFor="let goal of goals">
+{{ goal }}
+</p>
+
+--------------------------------------------------------------------
