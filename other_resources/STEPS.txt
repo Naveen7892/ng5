@@ -1,5 +1,7 @@
 https://www.udemy.com/angular-5/learn/v4/overview
 
+----------------------------------------------------------
+ENVIRONMENT INSTALLTION
 
 >> node -v
 v6.10.3
@@ -19,6 +21,8 @@ v6.10.3
 (open browser and navigate to 4200)
 
 ----------------------------------------------------------
+GITHUB REPOSITORY
+
 >> git init
 
 >> git remote add origin https://github.com/Naveen7892/ng5.git
@@ -29,5 +33,16 @@ v6.10.3
 >> git commit -m "Initial commit"
 
 >> git push -u origin master
+
+-------------------------------------------------------------------
+COMPONENTS
+
+>> ng generate component home
+
+>> ng g c about
+
+(add home in app.component.html)
+
+-------------------------------------------------------------------
 
 -------------------------------------------------------------------
