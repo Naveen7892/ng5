@@ -1,4 +1,5 @@
 <div class="container color-dark">
+
   <div class="col">
     <p>
       Add bucket list
@@ -29,9 +30,13 @@
       </form>
     </div>
   </div>
-  <div class="col">
-    <p class="life-container" *ngFor="let goal of goals">
-      {{ goal }}
-    </p>
+
+  <div class="container color-light" [@goals]="goals.length">
+    <div class="col">
+      <p class="life-container" *ngFor="let goal of goals; let i = index;" (click)="removeItem(i);">
+        {{ goal }}
+      </p>
+    </div>
   </div>
+  
 </div>

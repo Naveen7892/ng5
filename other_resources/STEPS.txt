@@ -67,4 +67,19 @@ For loop in template
 {{ goal }}
 </p>
 
+- added import { FormsModule } from '@angular/forms';
+
 --------------------------------------------------------------------
+ANIMATIONS
+
+>> npm install @angular/animations@latest --save
+
+- added animation functions (trigger, transition, stagger, query, animate, style,... ) in the home.component.ts
+
+- included the trigger name in the HTML template.
+
+- Added import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+--------------------------------------------------------------------
+
+
+
