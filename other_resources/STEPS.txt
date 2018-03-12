@@ -44,5 +44,10 @@ COMPONENTS
 (add home in app.component.html)
 
 -------------------------------------------------------------------
+TEMPLATING AND STYLING
+
+- link templateUrl and StyleUrls array.
+- add global css rules to app/styles.scss
+- add component specific css rules to app/home/home.component.scss
 
 -------------------------------------------------------------------
