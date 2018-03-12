@@ -1,0 +1,21 @@
+https://www.udemy.com/angular-5/learn/v4/overview
+
+
+>> node -v
+v6.10.3
+
+>> npm -v
+4.1.1
+
+>> npm install @angular/client -g
+
+>> ng -v
+
+>> ng new ng5 --style=scss --routing
+(includes sass styling and routing)
+
+>> ng serve
+
+(open browser and navigate to 4200)
+
+----------------------------------------------------------
