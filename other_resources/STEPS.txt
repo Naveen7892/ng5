@@ -19,3 +19,15 @@ v6.10.3
 (open browser and navigate to 4200)
 
 ----------------------------------------------------------
+>> git init
+
+>> git remote add origin https://github.com/Naveen7892/ng5.git
+
+(modify .gitignore file)
+>> git add .
+
+>> git commit -m "Initial commit"
+
+>> git push -u origin master
+
+-------------------------------------------------------------------
