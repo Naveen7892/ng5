@@ -118,3 +118,29 @@ this._data.goal.subscribe(res => this.goals = res);
 this._data.changeGoal(this.goals);
 
 ----------------------------------------------------------------------------------------
+DEPLOYMENT
+
+>> ng build
+(check dist folder. file size > 3.5MB)
+
+>> ng build --prod
+(check dist folder. file size < 1 MB)
+
+>> npm install -g angular-cli-ghpages
+
+>> ng build --prod --base-href="https://github.com/Naveen7892/ng5"
+
+>> angular-cli-ghpages
+[ngh]
+
+Error:
+ng5>angular-cli-ghpages
+An error occurred!
+ Error: Unspecified error (run without silent option for detail)
+
+SOL:
+add user.name and user.email in git config 
+ 
+>> ng build --prod --base-href="https://naveen7892.github.io/ng5/"
+
+>> ngh --repo="https://<username>:<password>@github.com/Naveen7892/ng5.git" --name="Naveen Kumar" --email="metanaveen@outlook.com" --no-silent
