@@ -80,6 +80,41 @@ ANIMATIONS
 
 - Added import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 --------------------------------------------------------------------
+ROUTING
 
+- Defining routes in app-routing.module.ts
+- Routing in Template using routerLink
+- Routing in Component class using Router
+- Accessing parameter in Component class using ActivatedRoute
 
+--------------------------------------------------------------------
+SERVICES
 
+>> ng generate service data
+[ng g s data]
+
+- Importing import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+- Added 
+  private goals = new BehaviorSubject<any>([
+    'Goal 1',
+    'Goal 2',
+    'Goal 3',
+  ]);
+  
+  goal = this.goals.asObservable();
+  
+  changeGoal (goalNew) {
+    this.goals.next(goalNew);
+  }
+
+- Imported DataService in app.module.ts, home.component.ts and about.component.ts
+import { DataService } from './data.service'; // added in providers array
+import { DataService } from '../data.service';
+
+- made DI in home and about components
+
+constructor(private _data: DataService) { }
+this._data.goal.subscribe(res => this.goals = res);
+this._data.changeGoal(this.goals);
+
+----------------------------------------------------------------------------------------
