@@ -1,6 +1,8 @@
 Tutorial Site: <br>
 https://www.udemy.com/angular-5/learn/v4/overview
 <br>
+https://coursetro.com/courses/19/Learn-Angular-5-from-Scratch---Angular-5-Tutorial
+<br>
 
 Published Site: <br>
 https://naveen7892.github.io/ng5/
