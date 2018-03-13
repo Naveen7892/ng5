@@ -1,3 +1,11 @@
 <p>
-  about works!
+  
+  <!-- Flicker while navigating to home page -->
+  <a href="" (click)="sendMeHome();"> <strong> To Home (using click event)</strong></a>
+
+  <br>
+  <br>
+
+  <!-- This doesn't flicker -->
+  <a href="" routerLink=""> <strong> To Home (using routerLink)</strong></a>
 </p>
