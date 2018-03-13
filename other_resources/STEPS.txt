@@ -133,14 +133,23 @@ DEPLOYMENT
 >> angular-cli-ghpages
 [ngh]
 
-Error:
-ng5>angular-cli-ghpages
-An error occurred!
- Error: Unspecified error (run without silent option for detail)
+	Error:
+	ng5>angular-cli-ghpages
+	An error occurred!
+	 Error: Unspecified error (run without silent option for detail)
 
-SOL:
-add user.name and user.email in git config 
- 
+	SOL:
+	add user.name and user.email in git config 
+
+(adding base href as dist is a subfolder in the github)
 >> ng build --prod --base-href="https://naveen7892.github.io/ng5/"
 
+(publishing in github pages through angular-cli-ghpages)
 >> ngh --repo="https://<username>:<password>@github.com/Naveen7892/ng5.git" --name="Naveen Kumar" --email="metanaveen@outlook.com" --no-silent
+
+NOTE:
+- github.com > ng5 > settings > GitHub Pages > Source > select gh-pages branch (if not selected already)
+- comment dist/ to #dist/ in .gitignore
+- git commit and push to repo.
+
+------------------------------------------------------------------------------------------
