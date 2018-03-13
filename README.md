@@ -1,27 +1,162 @@
-# Ng5
+Tutorial Site: <br>
+https://www.udemy.com/angular-5/learn/v4/overview
+<br>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
+Published Site: <br>
+https://naveen7892.github.io/ng5/
 
-## Development server
+----------------------------------------------------------
+ENVIRONMENT INSTALLTION
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+>> node -v
+v6.10.3
 
-## Code scaffolding
+>> npm -v
+4.1.1
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+>> npm install @angular/client -g
 
-## Build
+>> ng -v
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+>> ng new ng5 --style=scss --routing
+(includes sass styling and routing)
 
-## Running unit tests
+>> ng serve
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+(open browser and navigate to 4200)
 
-## Running end-to-end tests
+----------------------------------------------------------
+GITHUB REPOSITORY
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+>> git init
 
-## Further help
+>> git remote add origin https://github.com/Naveen7892/ng5.git
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+(modify .gitignore file)
+>> git add .
+
+>> git commit -m "Initial commit"
+
+>> git push -u origin master
+
+-------------------------------------------------------------------
+COMPONENTS
+
+>> ng generate component home
+
+>> ng g c about
+
+(add home in app.component.html)
+
+-------------------------------------------------------------------
+TEMPLATING AND STYLING
+
+- link templateUrl and StyleUrls array.
+- add global css rules to app/styles.scss
+- add component specific css rules to app/home/home.component.scss
+
+-------------------------------------------------------------------
+INTERPOLATION, PROPERTY & EVENT BINDING
+
+property binding
+[value]="btnText"
+
+Interpolation
+value="{{btnText}}"
+
+Event binding
+[(ngModel)]="goalText"
+
+For loop in template
+```
+<p *ngFor="let goal of goals">
+{{ goal }}
+</p>
+```
+
+- added import { FormsModule } from '@angular/forms';
+
+--------------------------------------------------------------------
+ANIMATIONS
+
+>> npm install @angular/animations@latest --save
+
+- added animation functions (trigger, transition, stagger, query, animate, style,... ) in the home.component.ts
+
+- included the trigger name in the HTML template.
+
+- Added import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+--------------------------------------------------------------------
+ROUTING
+
+- Defining routes in app-routing.module.ts
+- Routing in Template using routerLink
+- Routing in Component class using Router
+- Accessing parameter in Component class using ActivatedRoute
+
+--------------------------------------------------------------------
+SERVICES
+
+>> ng generate service data
+[ng g s data]
+
+- Importing import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+- Added 
+  private goals = new BehaviorSubject<any>([
+    'Goal 1',
+    'Goal 2',
+    'Goal 3',
+  ]);
+  
+  goal = this.goals.asObservable();
+  
+  changeGoal (goalNew) {
+    this.goals.next(goalNew);
+  }
+
+- Imported DataService in app.module.ts, home.component.ts and about.component.ts
+import { DataService } from './data.service'; // added in providers array
+import { DataService } from '../data.service';
+
+- made DI in home and about components
+
+constructor(private _data: DataService) { }
+this._data.goal.subscribe(res => this.goals = res);
+this._data.changeGoal(this.goals);
+
+----------------------------------------------------------------------------------------
+DEPLOYMENT
+
+>> ng build
+(check dist folder. file size > 3.5MB)
+
+>> ng build --prod
+(check dist folder. file size < 1 MB)
+
+>> npm install -g angular-cli-ghpages
+
+>> ng build --prod --base-href="https://github.com/Naveen7892/ng5"
+
+>> angular-cli-ghpages
+[ngh]
+
+	Error:
+	ng5>angular-cli-ghpages
+	An error occurred!
+	 Error: Unspecified error (run without silent option for detail)
+
+	SOL:
+	add user.name and user.email in git config 
+
+(adding base href as dist is a subfolder in the github)
+>> ng build --prod --base-href="https://naveen7892.github.io/ng5/"
+
+(publishing in github pages through angular-cli-ghpages)
+>> ngh --repo="https://<username>:<password>@github.com/Naveen7892/ng5.git" --name="Naveen Kumar" --email="metanaveen@outlook.com" --no-silent
+
+NOTE:
+- github.com > ng5 > settings > GitHub Pages > Source > select gh-pages branch (if not selected already)
+- comment dist/ to #dist/ in .gitignore
+- git commit and push to repo.
+
+------------------------------------------------------------------------------------------
